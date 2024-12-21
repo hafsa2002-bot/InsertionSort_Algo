@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Insertion(Tab){
+            for(let i=1; i < Tab.length; i++){
+                let key = Tab[i];
+                for(let j=i-1; j>=0; j--){
+                    if(key <= Tab[j]){
+                        let tmp;
+                        tmp = Tab[j];
+                        Tab[j] = Tab[j+1];
+                        Tab[j+1] = tmp;
+                        // key = Tab[j];
+                    }
+                }
+            }
+            return Tab;
+        }
+        const Arr = [1, 49, 13, 1, 25, 5, 13, 4, 11, 19];
+        console.log("Original Array: ", Arr);
+        const SortedArray = Insertion(Arr);
+        console.log("Sorted Array: ", SortedArray);
+    </script>
+</body>
+</html>
